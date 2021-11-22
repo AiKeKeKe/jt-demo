@@ -68,4 +68,9 @@ public class ItemServiceImpl implements ItemService {
     public ItemDesc findItemDescById(Long itemId) {
         return itemDescMapper.selectById(itemId);
     }
+
+    @Override
+    public Item findItemById(Long itemId) {
+        return itemMapper.selectById(itemId);
+    }
 }

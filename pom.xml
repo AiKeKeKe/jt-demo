@@ -6,6 +6,9 @@
     <modules>
         <module>jt-common</module>
         <module>jt-manage</module>
+        <module>jt-web</module>
+        <module>jt-web</module>
+        <module>jt-sso</module>
     </modules>
     <parent>
         <groupId>org.springframework.boot</groupId>
@@ -91,14 +94,33 @@
         </dependency>
 
         <!--spring整合redis -->
+<!--        <dependency>-->
+<!--            <groupId>redis.clients</groupId>-->
+<!--            <artifactId>jedis</artifactId>-->
+<!--        </dependency>-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.data</groupId>-->
+<!--            <artifactId>spring-data-redis</artifactId>-->
+<!--        </dependency>-->
+
+        <!--springboot整合redis -->
         <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-redis</artifactId>
+            <exclusions>
+                <exclusion>
+                    <groupId>io.lettuce</groupId>
+                    <artifactId>lettuce-core</artifactId>
+                </exclusion>
+            </exclusions>
         </dependency>
         <dependency>
-            <groupId>org.springframework.data</groupId>
-            <artifactId>spring-data-redis</artifactId>
+            <groupId>io.lettuce</groupId>
+            <artifactId>lettuce-core</artifactId>
+            <version>5.3.1.RELEASE</version>
+            <scope>compile</scope>
         </dependency>
+
 
         <!--springBoot整合JSP添加依赖 -->
         <!--servlet依赖 注意与eureka整合时的问题 -->
@@ -137,6 +159,17 @@
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
+        </dependency>
+
+        <dependency>
+            <groupId>org.apache.commons</groupId>
+            <artifactId>commons-lang3</artifactId>
+            <version>3.8.1</version>
+        </dependency>
+        <dependency>
+            <groupId>commons-collections</groupId>
+            <artifactId>commons-collections</artifactId>
+            <version>3.2.2</version>
         </dependency>
     </dependencies>
 
