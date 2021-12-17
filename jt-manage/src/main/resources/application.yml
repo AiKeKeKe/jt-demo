@@ -2,6 +2,9 @@ server:
   port: 8091
   servlet:
     context-path: /
+jt:
+  rabbitmq:
+    enable: true
 
 spring:
   datasource:
@@ -47,6 +50,22 @@ spring:
   #spring.redis.jedis.pool.min-idle=0
   #链接超时时间
   #spring.redis.timeout=3000
+
+  rabbitmq:
+    host:
+    port: 5672
+    username: guest
+    password: guest
+    virtual-host: /
+    publisher-confirms: true
+    publisher-returns: true
+    template:
+      mandatory: true
+    listener:
+      type: simple
+      simple:
+        acknowledge-mode: manual
+
 
 mybatis-plus:
   type-aliases-package: com.aike.pojo

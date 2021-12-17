@@ -24,4 +24,8 @@ public abstract class BaseRedisCache {
         redisTemplate.opsForValue().set(key, value, time, TimeUnit.SECONDS);
     }
 
+    public void remove(String key){
+        redisTemplate.delete(key);
+    }
+
 }

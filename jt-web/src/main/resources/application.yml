@@ -5,3 +5,11 @@ spring:     #定义springmvc视图解析器
     view:
       prefix: /WEB-INF/views/
       suffix: .jsp
+#引入dubbo的配置
+dubbo:
+  scan:
+    basePackages: com.aike
+  application:
+    name: consumer-user
+  registry:
+    address: zookeeper://192.168.182.129:2181?backup=192.168.182.129:2182,192.168.182.129:2183
