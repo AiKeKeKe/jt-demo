@@ -93,6 +93,12 @@
             <version>3.0.6</version>
         </dependency>
 
+        <!--spring整合jpa -->
+        <dependency>
+            <groupId>org.springframework.boot</groupId>
+            <artifactId>spring-boot-starter-data-jpa</artifactId>
+        </dependency>
+
         <!--spring整合redis -->
 <!--        <dependency>-->
 <!--            <groupId>redis.clients</groupId>-->
@@ -171,6 +177,8 @@
             <artifactId>commons-collections</artifactId>
             <version>3.2.2</version>
         </dependency>
+
+        <!--添加amqp的支持 -->
         <dependency>
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-amqp</artifactId>
